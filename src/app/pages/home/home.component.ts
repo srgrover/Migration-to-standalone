@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { Post, PostService } from 'src/app/Services/post.service';
 import { User, UserService } from 'src/app/Services/user.service';
+import { PostComponent } from '../../shared/components/post/post.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  standalone: true,
+  imports: [PostComponent, CommonModule, HomeComponent],
 })
 export class HomeComponent {
   posts: Post[];
